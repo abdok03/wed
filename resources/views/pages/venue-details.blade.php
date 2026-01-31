@@ -1,4 +1,4 @@
-@php
+{{-- @php
     // بيانات القاعة المفترضة - في الحقيقة ستأتي من Controller
     $venue = [
         'id' => 1,
@@ -29,7 +29,7 @@
             'Catering services available',
         ],
         'amenities' => [
-            ['icon' => 'wifi', 'text' => 'High-speed WiFi'],
+            ['icon' => 'wifi', 'text' => 'High-speed WiF'],
             ['icon' => 'parking', 'text' => 'Free Parking'],
             ['icon' => 'snowflake', 'text' => 'Air Conditioning'],
             ['icon' => 'wheelchair', 'text' => 'Wheelchair Accessible'],
@@ -1103,4 +1103,4 @@
         });
     });
 </script>
-@endsection
+@endsection --}}

@@ -28,8 +28,10 @@ Route::get('/forgot-password', function () {
 })->name('password.request');
 
 // 3. Route الـ explore - ADD THIS
-Route::get('/explore', [HallController::class, 'index'])->name('explore');
-
+// في routes/web.php
+Route::get('/explore', [HallController::class, 'explore'])->name('explore');
+Route::get('/explore/filter', [HallController::class, 'filter'])->name('explore.filter');
+Route::get('/halls/{hall}/quick-view', [HallController::class, 'quickView'])->name('halls.quickView');
 // 4. Route تفاصيل القاعة - FIXED
 Route::get('/venue/{hall}', [HallController::class, 'show'])->name('venue.details');
 // أو إذا بدك تحافظ على الاسم القديم:
@@ -144,4 +146,7 @@ Route::middleware(['auth'])->group(function () {
     // إلغاء الحجز
     Route::delete('/bookings/{booking}', [BookingController::class, 'destroy'])->name('bookings.destroy');
 });
+// Route::get('/pay', [StripeController::class, 'pay'])->name('pay');
+// Route::get('/payment/success', [StripeController::class, 'success'])->name('payment.success');
+// Route::get('/payment/cancel', [StripeController::class, 'cancel'])->name('payment.cancel');
 require __DIR__.'/auth.php';
